@@ -37,19 +37,6 @@
     },
     {
       "files": [
-        "*.liquid"
-      ],
-      "options": {
-        "singleQuote": false,
-        "liquidSingleQuote": true,
-        "embeddedSingleQuote": true,
-        "singleLineLinkTags": false,
-        "indentSchema": false,
-        "parser": "liquid-html"
-      }
-    },
-    {
-      "files": [
         "**/*.html"
       ],
       "options": {
