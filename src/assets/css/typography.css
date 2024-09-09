@@ -1,0 +1,45 @@
+.h1 {
+  @apply text-7xl font-medium;
+}
+
+.h2 {
+  @apply text-6xl font-medium;
+}
+
+.h3 {
+  @apply text-5xl font-medium;
+}
+
+.h4 {
+  @apply text-3xl font-medium;
+}
+
+.h5 {
+  @apply text-2xl font-medium;
+}
+
+.h6 {
+  @apply text-xl font-medium;
+}
+
+body,
+.p {
+  @apply text-base;
+}
+
+.label {
+  @apply text-sm font-bold uppercase;
+}
+
+.link {
+  @apply cursor-pointer capitalize underline underline-offset-4 transition-colors text-blue-600;
+
+  &:hover {
+    @apply text-blue-400;
+  }
+}
+
+.container {
+  @apply !max-w-xxl;
+}
+
