@@ -12,7 +12,7 @@ module.exports = {
       'lg-max': { max: '1023px' },
       xl: '1200px',
       'xl-max': { max: '1199px' },
-      '2xl': '1600px',
+      '2xl': '1440px',
       '3xl': '1536px'
     },
     extend: {

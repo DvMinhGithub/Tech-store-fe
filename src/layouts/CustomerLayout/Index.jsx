@@ -1,5 +1,7 @@
 import { Navigate, Outlet } from 'react-router-dom'
 
+import CustomerBenefits from '@/components/Footer/CustomerBenefits '
+import CustomerFooter from '@/components/Footer/CustomerFooter'
 import { isManage, removeToken } from '@/utils'
 
 const CustomerLayout = () => {
@@ -10,6 +12,8 @@ const CustomerLayout = () => {
   return (
     <>
       <Outlet />
+      <CustomerBenefits />
+      <CustomerFooter />
     </>
   )
 }
