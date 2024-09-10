@@ -3,8 +3,8 @@ import { decodeToken } from 'react-jwt'
 import { constants } from '@/constants'
 import { handleNotification, setToken } from '@/utils'
 
-import { create } from 'zustand'
 import { userService } from '../services/user'
+import { create } from 'zustand'
 
 const useUserStore = create((set) => ({
   user: null,
@@ -15,7 +15,7 @@ const useUserStore = create((set) => ({
     try {
       const res = await userService.register(data)
       handleNotification(constants.NOTIFICATION_SUCCESS, res)
-      onSuccess()O
+      onSuccess()
     } catch (error) {
       handleNotification(constants.NOTIFICATION_ERROR, error)
     } finally {
@@ -37,7 +37,7 @@ const useUserStore = create((set) => ({
     } finally {
       set({ isLoading: false })
     }
-  },
+  }
 }))
 
 export default useUserStore
