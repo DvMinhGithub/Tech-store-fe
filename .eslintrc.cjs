@@ -22,12 +22,7 @@ module.exports = {
       version: '^18.3.0'
     }
   },
-  plugins: [
-    'react-refresh',
-    'simple-import-sort',
-    'prettier',
-    'unused-imports'
-  ],
+  plugins: ['react-refresh', 'simple-import-sort', 'prettier', 'unused-imports'],
   rules: {
     'react/jsx-no-target-blank': 'off',
     'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],

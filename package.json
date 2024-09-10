@@ -9,7 +9,7 @@
     "build:production": "env-cmd -f .env.production vite build",
     "lint": "eslint . --ext js,jsx --fix --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "format": "prettier --write \"src/**/*.jsx\""
+    "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css}\""
   },
   "dependencies": {
     "@ant-design/icons": "^5.4.0",
