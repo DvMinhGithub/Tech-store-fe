@@ -76,7 +76,7 @@ function CustomerFooter() {
               </li>
             </ul>
           </div>
-          <div className="md-max:col-span-3">
+          <div className="md:col-span-3 lg:col-span-1">
             <h3 className="text-lg font-semibold mb-4">Thông Tin</h3>
             <p className="text-sm text-gray-300 mb-2">Nhận thông tin cập nhật mới nhất về ưu đãi và sản phẩm.</p>
             <form onSubmit={handleNewsletterSubmit} className="flex">
