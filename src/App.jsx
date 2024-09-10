@@ -14,10 +14,12 @@ const RegisterPage = React.lazy(() => import('./pages/RegisterPage/Index'))
 const CustomerHomePage = React.lazy(() => import('./pages/HomePage/CustomerHomePage'))
 const PageNotFound = React.lazy(() => import('./pages/PageNotFound/PageNotFound'))
 
-// Trang Admin
 const adminRoutes = [
   { path: routes.auth.homeAdmin, element: React.lazy(() => import('./pages/HomePage/ManageHomePage')) }
 ]
+
+const customerRoutes = [{ path: routes.user.profile, element: React.lazy(() => import('./pages/Profile/Profile')) }]
+
 const loadingIndicator = <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} fullscreen />
 
 function App() {
@@ -33,6 +35,11 @@ function App() {
           <Route element={<ProtectedRoute />}>
             <Route element={<AdminLayout />}>
               {adminRoutes.map((route, index) => (
+                <Route key={index} path={route.path} element={<route.element />} />
+              ))}
+            </Route>
+            <Route element={<CustomerLayout />}>
+              {customerRoutes.map((route, index) => (
                 <Route key={index} path={route.path} element={<route.element />} />
               ))}
             </Route>

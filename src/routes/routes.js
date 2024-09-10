@@ -4,5 +4,9 @@ export const routes = {
     homeAdmin: '/admin',
     login: '/login',
     register: '/register'
+  },
+
+  user: {
+    profile: '/profile'
   }
 }
