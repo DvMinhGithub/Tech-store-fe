@@ -1,4 +1,4 @@
-# Clothes Shop App
+# Tech Store Shop
 
 ## Node Version Manager
 
@@ -12,8 +12,8 @@ You need to install the Node version > 18 to install dependencies and run comman
 
 1. Clone the repository
    ```sh
-   git clone https://github.com/yourusername/clothes-shop.git
-   cd clothes-shop
+   git clone https://github.com/DvMinhGithub/Tech-store-shop
+   cd Tech-store-shop
    ```
 2. Install the dependencies:
    ```sh
