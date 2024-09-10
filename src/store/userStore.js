@@ -6,7 +6,7 @@ import { handleNotification, setToken } from '@/utils'
 import { userService } from '../services/user'
 import { create } from 'zustand'
 
-const useUserStore = create((set) => ({
+const useUserStore = create((set, get) => ({
   user: null,
   isLoading: false,
 
@@ -32,6 +32,31 @@ const useUserStore = create((set) => ({
 
       onSuccess(dataFromToken?.roles || [])
       handleNotification(constants.NOTIFICATION_SUCCESS, res)
+    } catch (error) {
+      handleNotification(constants.NOTIFICATION_ERROR, error)
+    } finally {
+      set({ isLoading: false })
+    }
+  },
+
+  getProfile: async () => {
+    set({ isLoading: true })
+    try {
+      const res = await userService.getProfile()
+      set({ user: res.data })
+    } catch (error) {
+      console.error(error.message)
+    } finally {
+      set({ isLoading: false })
+    }
+  },
+
+  updateProfile: async (data) => {
+    set({ isLoading: true })
+    try {
+      const res = await userService.updateProfile(data)
+      handleNotification(constants.NOTIFICATION_SUCCESS, res)
+      await get().getProfile()
     } catch (error) {
       handleNotification(constants.NOTIFICATION_ERROR, error)
     } finally {
