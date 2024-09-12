@@ -12,10 +12,24 @@ function ProductSwiper({ title, products, className }) {
       <CustomSwiper
         pagination={false}
         navigation={products.length > 4 ? true : false}
-        slidesPerView={4}
+        autoplay={false}
+        breakpoints={{
+          320: {
+            slidesPerView: 2,
+            spaceBetween: 10
+          },
+          640: {
+            slidesPerView: 3,
+            spaceBetween: 10
+          },
+          1024: {
+            slidesPerView: 4,
+            spaceBetween: 20
+          }
+        }}
         spaceBetween={20}>
         {products.map((item, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} className="!h-auto">
             <ProductCard product={item} />
           </SwiperSlide>
         ))}

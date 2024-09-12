@@ -12,20 +12,29 @@ function CustomSwiper({
   spaceBetween = 0,
   slidesPerView = 1,
   navigation = false,
-  pagination = false
+  pagination = false,
+  autoplay = true,
+  autoplayDelay = 5000,
+  loop = true,
+  breakpoints = {}
 }) {
   return (
     <Swiper
       spaceBetween={spaceBetween}
       slidesPerView={slidesPerView}
       navigation={navigation}
-      pagination={{ clickable: pagination }}
+      pagination={pagination ? { clickable: true } : false}
       modules={[Navigation, Pagination, Autoplay]}
-      autoplay={{
-        delay: 5000,
-        disableOnInteraction: false
-      }}
-      loop={true}
+      autoplay={
+        autoplay
+          ? {
+              delay: autoplayDelay,
+              disableOnInteraction: false
+            }
+          : false
+      }
+      loop={loop}
+      breakpoints={breakpoints}
       className={className}>
       {children}
     </Swiper>
