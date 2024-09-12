@@ -10,14 +10,17 @@ export function CustomBanner() {
   ]
 
   return (
-    <CustomSwiper slidesPerView={1} pagination={true}>
-      {items.map((item, index) => (
-        <SwiperSlide key={index} className="!h-auto">
-          <div className={`h-64 flex items-center justify-center text-4xl font-bold ${item.backgroundColor}`}>
-            {item.text}
-          </div>
-        </SwiperSlide>
-      ))}
-    </CustomSwiper>
+    <div className="overflow-hidden">
+      <CustomSwiper slidesPerView={1} pagination={true}>
+        {items.map((item, index) => (
+          <SwiperSlide key={index} className="!h-auto">
+            <div
+              className={`flex items-center justify-center h-64 text-2xl font-bold lg:text-4xl ${item.backgroundColor}`}>
+              {item.text}
+            </div>
+          </SwiperSlide>
+        ))}
+      </CustomSwiper>
+    </div>
   )
 }
