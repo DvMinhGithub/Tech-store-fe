@@ -1,9 +1,13 @@
-import { httpPost } from '../configs/api'
+import { httpGet, httpPost, httpPut } from '../configs/api'
 
-const addToCart = (data) => {
-  return httpPost('/cart/addToCart', data)
-}
+const fetchCartItems = () => httpGet('/cart/get')
+
+const addItemToCart = (data) => httpPost('/cart/addItemToCart', data)
+
+const updateCartItems = (data) => httpPut('/cart/update', data)
 
 export const cartService = {
-  addToCart
+  fetchCartItems,
+  addItemToCart,
+  updateCartItems
 }

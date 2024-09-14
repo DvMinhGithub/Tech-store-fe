@@ -18,7 +18,10 @@ const adminRoutes = [
   { path: routes.auth.homeAdmin, element: React.lazy(() => import('./pages/HomePage/ManageHomePage')) }
 ]
 
-const customerRoutes = [{ path: routes.user.profile, element: React.lazy(() => import('./pages/Profile/Profile')) }]
+const customerRoutes = [
+  { path: routes.user.profile, element: React.lazy(() => import('./pages/Profile/Profile')) },
+  { path: routes.cart.list, element: React.lazy(() => import('./pages/Cart/CartPage')) }
+]
 
 const loadingIndicator = <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} fullscreen />
 

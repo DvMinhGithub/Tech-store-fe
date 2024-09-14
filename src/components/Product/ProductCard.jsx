@@ -6,7 +6,7 @@ import useCartStore from '@/store/cartStore'
 import { formatMoneyVND, getToken, handleNotification, isManage, removeToken } from '@/utils'
 
 function ProductCard({ product }) {
-  const { addToCart } = useCartStore()
+  const { addItemToCart } = useCartStore()
   const navigate = useNavigate()
   const id = useId()
 
@@ -22,7 +22,7 @@ function ProductCard({ product }) {
       return
     }
 
-    addToCart({ quantity: 1, idProduct: product.id })
+    addItemToCart({ quantity: 1, idProduct: product.id })
   }
 
   return (
