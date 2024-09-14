@@ -9,12 +9,11 @@ const { Content } = Layout
 
 const AdminLayout = () => {
   return (
-    <Layout style={{ minHeight: '100vh', overflow: 'hidden', background: '#fff4ea' }}>
-      <Header className="site-layout-background" style={{ padding: 0, background: '#001f3f' }}></Header>
-      <Layout className="site-layout" style={{ background: '#fff4ea' }}>
+    <Layout className="min-h-screen bg-white">
+      <Header />
+      <Layout className="bg-white">
         <Sidebar />
-
-        <Content style={{ padding: '24px', background: '#fff4ea' }}>
+        <Content className="p-4 lg:p-6">
           <Outlet />
         </Content>
       </Layout>
