@@ -5,8 +5,10 @@ export const routes = {
     login: '/login',
     register: '/register'
   },
-
   user: {
     profile: '/profile'
+  },
+  cart: {
+    list: '/cart'
   }
 }

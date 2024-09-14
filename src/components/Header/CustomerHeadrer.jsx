@@ -49,7 +49,6 @@ const MobileMenu = ({
     </Link>
   </nav>
 )
-
 function CustomerHeader() {
   const [isSlideMenuMobileOpen, setIsSlideMenuMobileOpen] = useState(false)
   const { user, getProfile } = useUserStore()
