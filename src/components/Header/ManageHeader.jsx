@@ -41,8 +41,8 @@ const ManageHeaderComponent = () => {
   }, [getProfile])
 
   return (
-    <div className="container flex justify-between py-3 bg-white border-b">
-      <Link to="/" className="text-2xl font-bold text-blue-600 mr-8">
+    <div className="px-4 flex justify-between py-3 bg-white border-b lg:px-6">
+      <Link to="/" className="ml-12 text-2xl font-bold text-blue-600 lg:mr-8">
         TechStore
       </Link>
       <div className="flex items-center w-fit">
