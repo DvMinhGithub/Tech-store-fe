@@ -16,5 +16,8 @@ export const routes = {
   },
   category: {
     list: '/admin/category'
+  },
+  supplier: {
+    list: '/admin/supplier'
   }
 }
