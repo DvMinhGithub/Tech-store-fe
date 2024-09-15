@@ -2,7 +2,7 @@ import { useCallback, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 
 import useUserStore from '@/store/userStore'
-import { removeToken } from '@/utils'
+import { tokenOperations } from '@/utils'
 
 import { UserOutlined } from '@ant-design/icons'
 import { Avatar, Dropdown } from 'antd'
@@ -13,7 +13,7 @@ const ManageHeaderComponent = () => {
   const { name, avatar } = user || {}
 
   const handleLogout = useCallback(() => {
-    removeToken('token')
+    tokenOperations.remove('token')
     navigate('/login')
   }, [navigate])
 

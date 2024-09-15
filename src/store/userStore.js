@@ -1,7 +1,7 @@
 import { decodeToken } from 'react-jwt'
 
 import { constants } from '@/constants'
-import { handleNotification, setToken } from '@/utils'
+import { handleNotification, tokenOperations } from '@/utils'
 
 import { userService } from '../services/user'
 import { create } from 'zustand'
@@ -27,7 +27,7 @@ const useUserStore = create((set, get) => ({
     set({ isLoading: true })
     try {
       const res = await userService.login(payload)
-      setToken(res.data.accessToken)
+      tokenOperations.set(res.data.accessToken)
       const dataFromToken = decodeToken(res.data.accessToken)
 
       onSuccess(dataFromToken?.roles || [])

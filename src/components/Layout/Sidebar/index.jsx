@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { decodeToken } from 'react-jwt'
 import { Link, useLocation } from 'react-router-dom'
 
-import { getToken } from '@/utils'
+import { tokenOperations } from '@/utils'
 
 import {
   BankOutlined,
@@ -91,7 +91,7 @@ const AdminSidebar = () => {
   const location = useLocation()
   const [isSlideMenuMobileOpen, setIsSlideMenuMobileOpen] = useState(false)
 
-  const token = getToken()
+  const token = tokenOperations.get()
   const dataFromToken = decodeToken(token)
 
   const getSelectedKeys = () => {

@@ -1,4 +1,4 @@
-import { getToken } from '@/utils'
+import { tokenOperations } from '@/utils'
 
 import axios from 'axios'
 
@@ -10,7 +10,7 @@ const axiosClient = axios.create({
 
 axiosClient.interceptors.request.use(
   (config) => {
-    const token = getToken('token')
+    const token = tokenOperations.get('token')
     if (token) {
       config.headers['Authorization'] = `Bearer ${token}`
     }

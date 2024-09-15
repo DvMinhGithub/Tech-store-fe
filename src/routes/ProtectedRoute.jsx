@@ -1,9 +1,9 @@
 import { Navigate, Outlet } from 'react-router-dom'
 
-import { getToken } from '@/utils'
+import { tokenOperations } from '@/utils'
 
 const ProtectedRoute = () => {
-  const token = getToken()
+  const token = tokenOperations.get()
 
   if (token) {
     return <Outlet />

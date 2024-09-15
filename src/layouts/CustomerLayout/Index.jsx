@@ -3,11 +3,11 @@ import { Navigate, Outlet } from 'react-router-dom'
 import CustomerBenefits from '@/components/Layout/Footer/CustomerBenefits '
 import CustomerFooter from '@/components/Layout/Footer/CustomerFooter'
 import CustomerHeader from '@/components/Layout/Header/CustomerHeadrer'
-import { isManage, removeToken } from '@/utils'
+import { tokenOperations, userRoles } from '@/utils'
 
 const CustomerLayout = () => {
-  if (isManage()) {
-    removeToken('token')
+  if (userRoles.isManage()) {
+    tokenOperations.remove('token')
     return <Navigate to="/login" />
   }
   return (

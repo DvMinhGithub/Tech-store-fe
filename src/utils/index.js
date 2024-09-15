@@ -1,44 +1,53 @@
 import { decodeToken } from 'react-jwt'
 import { toast } from 'react-toastify'
 
-export const removeToken = () => {
-  localStorage.removeItem('token')
+const TOKEN_KEY = 'token'
+const ROLES = {
+  ADMIN: 'ADMIN',
+  EMPLOYEE: 'EMPLOYEE',
+  CUSTOMER: 'CUSTOMER'
 }
 
-export const setToken = (token) => {
-  localStorage.setItem('token', token)
-}
-
-export const getToken = () => {
-  return localStorage.getItem('token')
+export const tokenOperations = {
+  remove: () => localStorage.removeItem(TOKEN_KEY),
+  set: (token) => localStorage.setItem(TOKEN_KEY, token),
+  get: () => localStorage.getItem(TOKEN_KEY)
 }
 
 const getRolesFromToken = () => {
-  const token = getToken()
-  const dataFromToken = decodeToken(token)
-  return dataFromToken?.roles || []
+  const token = tokenOperations.get()
+  if (!token) return []
+  try {
+    const decodedToken = decodeToken(token)
+    return decodedToken?.roles || []
+  } catch (error) {
+    console.error('Lỗi khi giải mã token:', error)
+    return []
+  }
 }
 
-export const isManage = () => {
-  const roles = getRolesFromToken()
-  return roles.some((role) => role === 'ADMIN' || role === 'EMPLOYEE')
+const hasRole = (roleToCheck) => getRolesFromToken().includes(roleToCheck)
+
+export const userRoles = {
+  isManage: () => hasRole(ROLES.ADMIN) || hasRole(ROLES.EMPLOYEE),
+  isCustomer: () => hasRole(ROLES.CUSTOMER)
 }
 
-export const isCustomer = () => {
-  const roles = getRolesFromToken()
-  return roles.includes('CUSTOMER')
-}
-
-export const handleNotification = (type, res) => {
-  toast[type](res.message)
+export const handleNotification = (type, { message }) => {
+  if (!toast[type]) {
+    console.warn(`Loại thông báo không hợp lệ: ${type}`)
+    return
+  }
+  toast[type](message)
 }
 
 export const formatMoneyVND = (amount = 0) => {
-  let amountStr = amount.toString().replace(/[^0-9.-]+/g, '')
-  let [whole] = amountStr.split('.')
-  whole = whole.replace(/\B(?=(\d{3})+(?!\d))/g, '.')
-
-  return `${whole} đ`
+  const formatter = new Intl.NumberFormat('vi-VN', {
+    style: 'currency',
+    currency: 'VND',
+    minimumFractionDigits: 0
+  })
+  return formatter.format(amount)
 }
 
-export const isEmptyUsingKeys = (obj) => Object.keys(obj).length === 0
+export const isEmptyObject = (obj) => obj && Object.keys(obj).length === 0 && obj.constructor === Object
