@@ -4,9 +4,9 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper } from 'swiper/react'
 
 import 'swiper/css'
-import './CustomSwiper.css'
+import './Carousel.css'
 
-function CustomSwiper({
+function CustomCarousel({
   children,
   className,
   spaceBetween = 0,
@@ -41,4 +41,4 @@ function CustomSwiper({
   )
 }
 
-export default CustomSwiper
+export default CustomCarousel

@@ -23,7 +23,6 @@ const useSupplierStore = create((set, get) => ({
       const {
         data: { list, pages, total }
       } = await supplierService.getSuppliers(data)
-      console.log(data)
       set({ suppliers: list, pages, totalItems: total })
     } catch (error) {
       console.log(error)

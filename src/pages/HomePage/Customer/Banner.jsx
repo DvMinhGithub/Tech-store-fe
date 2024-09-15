@@ -1,4 +1,4 @@
-import CustomSwiper from '@/components/CustomSwiper/CustomSwiper'
+import CustomCarousel from '@/components/Carousel/Carousel'
 
 import { SwiperSlide } from 'swiper/react'
 
@@ -11,7 +11,7 @@ export function CustomBanner() {
 
   return (
     <div className="overflow-hidden">
-      <CustomSwiper slidesPerView={1} pagination={true}>
+      <CustomCarousel slidesPerView={1} pagination={true}>
         {items.map((item, index) => (
           <SwiperSlide key={index} className="!h-auto">
             <div
@@ -20,7 +20,7 @@ export function CustomBanner() {
             </div>
           </SwiperSlide>
         ))}
-      </CustomSwiper>
+      </CustomCarousel>
     </div>
   )
 }

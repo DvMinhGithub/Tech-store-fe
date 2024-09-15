@@ -1,4 +1,4 @@
-import CustomSwiper from '@/components/CustomSwiper/CustomSwiper'
+import CustomCarousel from '@/components/Carousel/Carousel'
 import ProductCard from '@/components/Product/ProductCard'
 
 import { SwiperSlide } from 'swiper/react'
@@ -9,7 +9,7 @@ function ProductSwiper({ title, products, className }) {
       <div className="border-t border-lime-600">
         <h2 className="w-fit p-2 bg-lime-600 text-2xl text-white-500 font-semibold mb-4">{title}</h2>
       </div>
-      <CustomSwiper
+      <CustomCarousel
         pagination={false}
         navigation={products.length > 4 ? true : false}
         autoplay={false}
@@ -33,7 +33,7 @@ function ProductSwiper({ title, products, className }) {
             <ProductCard product={item} />
           </SwiperSlide>
         ))}
-      </CustomSwiper>
+      </CustomCarousel>
     </div>
   )
 }

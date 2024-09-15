@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import CustomPagination from '@/components/Pagination'
+import CustomPagination from '@/components/Common/Pagination'
 import useSupplierStore from '@/store/supplierStore'
 
 import AddEditSupplier from './AddEditSupplier'

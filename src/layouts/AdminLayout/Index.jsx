@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom'
 
-import Header from '@/components/Header/ManageHeader'
-import Sidebar from '@/components/Sidebar'
+import Header from '@/components/Layout/Header/ManageHeader'
 
 import { Layout } from 'antd'
+import AdminSidebar from '@/components/Layout/Sidebar'
 
 const { Content } = Layout
 
@@ -12,7 +12,7 @@ const AdminLayout = () => {
     <Layout className="min-h-screen bg-white">
       <Header />
       <Layout className="bg-white">
-        <Sidebar />
+        <AdminSidebar />
         <Content className="p-4 lg:p-6">
           <Outlet />
         </Content>
