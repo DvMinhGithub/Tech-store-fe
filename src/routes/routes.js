@@ -10,5 +10,10 @@ export const routes = {
   },
   cart: {
     list: '/cart'
+  },
+  brand: {
+    list: '/admin/brand',
+    add: '/admin/brand/create',
+    edit: '/admin/brand/edit/:id'
   }
 }

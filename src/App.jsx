@@ -15,7 +15,8 @@ const CustomerHomePage = React.lazy(() => import('./pages/HomePage/CustomerHomeP
 const PageNotFound = React.lazy(() => import('./pages/PageNotFound/PageNotFound'))
 
 const adminRoutes = [
-  { path: routes.auth.homeAdmin, element: React.lazy(() => import('./pages/HomePage/ManageHomePage')) }
+  { path: routes.auth.homeAdmin, element: React.lazy(() => import('./pages/HomePage/ManageHomePage')) },
+  { path: routes.brand.list, element: React.lazy(() => import('./pages/Brand')) }
 ]
 
 const customerRoutes = [
