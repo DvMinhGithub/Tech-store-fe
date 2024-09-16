@@ -13,8 +13,6 @@ const buildUrl = (params = {}) => {
 }
 
 export const productService = {
-  fetchTopViewedProducts: () => httpGet('/product/top-view'),
-
   addProduct: (data) => httpPost(`${BASE_URL}/create`, data),
 
   getListProducts: (data = {}) =>
