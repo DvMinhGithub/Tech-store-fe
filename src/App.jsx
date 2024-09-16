@@ -18,7 +18,10 @@ const adminRoutes = [
   { path: routes.auth.homeAdmin, element: React.lazy(() => import('./pages/HomePage/Manage/Homepage')) },
   { path: routes.brand.list, element: React.lazy(() => import('./pages/Brand')) },
   { path: routes.category.list, element: React.lazy(() => import('./pages/Category')) },
-  { path: routes.supplier.list, element: React.lazy(() => import('./pages/Supplier')) }
+  { path: routes.supplier.list, element: React.lazy(() => import('./pages/Supplier')) },
+  { path: routes.product.add, element: React.lazy(() => import('./pages/Product/AddEditProduct')) },
+  { path: routes.product.list, element: React.lazy(() => import('./pages/Product')) },
+  { path: routes.product.edit, element: React.lazy(() => import('./pages/Product/AddEditProduct')) }
 ]
 
 const customerRoutes = [

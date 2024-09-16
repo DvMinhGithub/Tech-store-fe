@@ -1,9 +1,9 @@
 import { Outlet } from 'react-router-dom'
 
 import Header from '@/components/Layout/Header/ManageHeader'
+import AdminSidebar from '@/components/Layout/Sidebar'
 
 import { Layout } from 'antd'
-import AdminSidebar from '@/components/Layout/Sidebar'
 
 const { Content } = Layout
 
