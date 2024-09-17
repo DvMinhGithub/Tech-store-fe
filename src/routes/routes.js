@@ -24,5 +24,8 @@ export const routes = {
     list: '/admin/product',
     add: '/admin/product/create',
     edit: '/admin/product/edit/:id'
+  },
+  voucher: {
+    list: '/admin/voucher'
   }
 }
