@@ -21,7 +21,8 @@ const adminRoutes = [
   { path: routes.supplier.list, element: React.lazy(() => import('./pages/Supplier')) },
   { path: routes.product.add, element: React.lazy(() => import('./pages/Product/AddEditProduct')) },
   { path: routes.product.list, element: React.lazy(() => import('./pages/Product')) },
-  { path: routes.product.edit, element: React.lazy(() => import('./pages/Product/AddEditProduct')) }
+  { path: routes.product.edit, element: React.lazy(() => import('./pages/Product/AddEditProduct')) },
+  { path: routes.voucher.list, element: React.lazy(() => import('./pages/Voucher')) }
 ]
 
 const customerRoutes = [
