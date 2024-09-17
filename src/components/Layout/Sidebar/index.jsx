@@ -30,13 +30,13 @@ const menuData = [
   {
     key: 'admin-product',
     icon: <UnorderedListOutlined />,
-    label: <Link to="/admin/product">Danh sách sản phẩm</Link>,
+    label: <Link to="/admin/product">Sản phẩm</Link>,
     roles: ['ADMIN', 'EMPLOYEE']
   },
   {
     key: 'admin-category',
     icon: <ContainerOutlined />,
-    label: <Link to="/admin/category">Danh mục sản phẩm</Link>,
+    label: <Link to="/admin/category">Danh mục</Link>,
     roles: ['ADMIN', 'EMPLOYEE']
   },
   {

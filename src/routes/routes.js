@@ -19,5 +19,10 @@ export const routes = {
   },
   supplier: {
     list: '/admin/supplier'
+  },
+  product: {
+    list: '/admin/product',
+    add: '/admin/product/create',
+    edit: '/admin/product/edit/:id'
   }
 }
