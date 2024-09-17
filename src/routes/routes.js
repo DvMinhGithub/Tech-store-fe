@@ -27,5 +27,11 @@ export const routes = {
   },
   voucher: {
     list: '/admin/voucher'
+  },
+  employee: {
+    add: '/admin/employee/create',
+    edit: '/admin/employee/edit/:id',
+    list: '/admin/employee',
+    profile: '/admin/employee/profile'
   }
 }

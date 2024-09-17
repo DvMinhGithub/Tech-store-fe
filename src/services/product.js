@@ -1,16 +1,8 @@
+import { buildUrl } from '@/utils'
+
 import { httpDelete, httpGet, httpPost, httpPut } from '../configs/api'
 
 const BASE_URL = '/product'
-
-const buildUrl = (params = {}) => {
-  const url = new URL(`${BASE_URL}/getListProduct`, window.location.origin)
-  Object.entries(params).forEach(([key, value]) => {
-    if (value !== undefined && value !== null && value !== '') {
-      url.searchParams.append(key, value)
-    }
-  })
-  return url.pathname + url.search
-}
 
 export const productService = {
   fetchTopViewedProducts: () => httpGet('/product/top-view'),
@@ -30,7 +22,7 @@ export const productService = {
 
   updateProduct: (id, data) => httpPut(`${BASE_URL}/update/${id}`, data),
 
-  getProductByName: (name) => httpGet(buildUrl({ search: name })),
+  getProductByName: (name) => httpGet(buildUrl(`${BASE_URL}/getListProduct`, { search: name })),
 
   getProductById: (id) => httpGet(`${BASE_URL}/detail/${id}`),
 

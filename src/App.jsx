@@ -22,7 +22,10 @@ const adminRoutes = [
   { path: routes.product.add, element: React.lazy(() => import('./pages/Product/AddEditProduct')) },
   { path: routes.product.list, element: React.lazy(() => import('./pages/Product')) },
   { path: routes.product.edit, element: React.lazy(() => import('./pages/Product/AddEditProduct')) },
-  { path: routes.voucher.list, element: React.lazy(() => import('./pages/Voucher')) }
+  { path: routes.voucher.list, element: React.lazy(() => import('./pages/Voucher')) },
+  { path: routes.employee.list, element: React.lazy(() => import('./pages/Employee')) },
+  { path: routes.employee.add, element: React.lazy(() => import('./pages/Employee/AddEditEmployee')) },
+  { path: routes.employee.edit, element: React.lazy(() => import('./pages/Employee/AddEditEmployee')) }
 ]
 
 const customerRoutes = [
