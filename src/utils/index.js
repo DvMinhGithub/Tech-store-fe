@@ -50,4 +50,14 @@ export const formatMoneyVND = (amount = 0) => {
   return formatter.format(amount)
 }
 
+export const buildUrl = (endpoint, params = {}) => {
+  const url = new URL(endpoint, window.location.origin)
+  Object.entries(params).forEach(([key, value]) => {
+    if (value !== undefined && value !== null && value !== '') {
+      url.searchParams.append(key, value)
+    }
+  })
+  return url.pathname + url.search
+}
+
 export const isEmptyObject = (obj) => obj && Object.keys(obj).length === 0 && obj.constructor === Object
